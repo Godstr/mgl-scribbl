@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="mn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>skribbl - Үнэгүй олон тоглогчтой зурж таах тоглоом</title>
+  <meta name="description" content="skribbl.io монгол хэл дээр! Үнэгүй, олон тоглогчтой онлайн зурж таах тоглоом.">
+  <meta name="theme-color" content="#2a4ccb">
+  <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/fonts/nunito/400.css">
+  <link rel="stylesheet" href="/fonts/nunito/600.css">
+  <link rel="stylesheet" href="/fonts/nunito/700.css">
+  <link rel="stylesheet" href="/fonts/nunito/800.css">
+  <link rel="stylesheet" href="/fonts/nunito/900.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <!-- ================= НҮҮР ХУУДАС ================= -->
+  <div id="home" class="screen home">
+    <div class="home-top">
+      <h1 class="logo-big" aria-label="skribbl.io">
+        <svg class="logo-svg" viewBox="0 0 600 150" role="img" aria-hidden="true"><use href="#logo"/></svg>
+      </h1>
+      <div class="logo-avatars" id="logo-avatars"></div>
+    </div>
+
+    <main class="home-main">
+      <div class="panel-play">
+        <div class="invite-note hidden" id="invite-note">Таныг хувийн өрөөнд урьжээ! <b>Тоглох!</b> дээр дарж нэгдээрэй.</div>
+        <div class="home-error hidden" id="home-error" role="alert"></div>
+        <div class="input-row">
+          <input class="input" id="name-input" type="text" maxlength="20" placeholder="Нэрээ оруулна уу" autocomplete="off" spellcheck="false">
+          <select class="input select" id="lang-select" aria-label="Хэл">
+            <option value="mn" selected>Монгол</option>
+          </select>
+        </div>
+        <div class="avatar-box">
+          <div class="av-arrows">
+            <button class="av-arrow" data-part="1" data-dir="-1" aria-label="Өмнөх нүд" title="Нүд"></button>
+            <button class="av-arrow" data-part="2" data-dir="-1" aria-label="Өмнөх ам" title="Ам"></button>
+            <button class="av-arrow" data-part="0" data-dir="-1" aria-label="Өмнөх өнгө" title="Өнгө"></button>
+          </div>
+          <div class="av-preview" id="av-preview"></div>
+          <div class="av-arrows right">
+            <button class="av-arrow" data-part="1" data-dir="1" aria-label="Дараагийн нүд" title="Нүд"></button>
+            <button class="av-arrow" data-part="2" data-dir="1" aria-label="Дараагийн ам" title="Ам"></button>
+            <button class="av-arrow" data-part="0" data-dir="1" aria-label="Дараагийн өнгө" title="Өнгө"></button>
+          </div>
+          <button class="av-random" id="av-random" aria-label="Санамсаргүй аватар" title="Санамсаргүй"></button>
+        </div>
+        <button class="btn btn-play" id="btn-play">Тоглох!</button>
+        <button class="btn btn-private" id="btn-create">Хувийн өрөө үүсгэх</button>
+      </div>
+    </main>
+
+    <section class="home-info">
+      <article class="info-card">
+        <h2><span class="info-icon" data-icon="help"></span>Тухай</h2>
+        <p><b>skribbl.io</b> бол үнэгүй, олон тоглогчтой онлайн зураг зурж таах тоглоом юм.</p>
+        <p>Нэг тоглоом хэд хэдэн үеэс бүрдэнэ. Үе бүрт тоглогч бүр өөрийн сонгосон үгийг зурж, бусад нь түүнийг таан оноо авна!</p>
+        <p>Тоглоомын төгсгөлд хамгийн их оноо цуглуулсан тоглогч ялагч болно!<br>Хөгжилтэй тоглоорой!</p>
+      </article>
+      <article class="info-card">
+        <h2><span class="info-icon" data-icon="news"></span>Мэдээ</h2>
+        <div class="news">
+          <div class="news-head"><b>Монгол хэл дээр</b><span>2026.10.22</span></div>
+          <p>Сайн байна уу!</p>
+          <ul>
+            <li>Бүх зүйл монгол хэл дээр</li>
+            <li>700 гаруй монгол үг</li>
+            <li>Латин үсгээр бичсэн таамаглалыг ч ойлгоно: <i>nohoi</i> = <i>нохой</i></li>
+            <li>Хувийн өрөө, өөрийн үгс</li>
+            <li>Гар утсанд зориулсан дэлгэц</li>
+            <li>Буцаах товч, будах хэрэгсэл, 26 өнгө</li>
+            <li>Тохируулж болох товчлол</li>
+            <li>Санал өгч тоглогч хасах, дуугүй болгох</li>
+          </ul>
+        </div>
+      </article>
+      <article class="info-card">
+        <h2><span class="info-icon" data-icon="pencil"></span>Хэрхэн тоглох</h2>
+        <div class="slides" id="slides"></div>
+        <div class="slide-dots" id="slide-dots"></div>
+      </article>
+    </section>
+  </div>
+
+  <!-- ================= ТОГЛООМ ================= -->
+  <div id="game" class="screen game hidden">
+    <div class="game-top">
+      <a class="logo-small" href="/" id="logo-small" aria-label="skribbl.io — нүүр хуудас">
+        <svg class="logo-svg" viewBox="0 0 600 150" aria-hidden="true"><use href="#logo"/></svg>
+      </a>
+    </div>
+
+    <div class="game-bar">
+      <div class="bar-left">
+        <div class="clock" id="clock"><span id="timer">0</span></div>
+        <div class="round-text" id="round-text"></div>
+      </div>
+      <div class="word-box">
+        <div class="word-label" id="word-label">ХҮЛЭЭЖ БАЙНА</div>
+        <div class="word" id="word"></div>
+      </div>
+      <div class="bar-right">
+        <button class="icon-btn" id="btn-settings" aria-label="Тохиргоо" title="Тохиргоо"></button>
+      </div>
+    </div>
+
+    <aside class="game-players">
+      <div class="fill" id="players-list"></div>
+    </aside>
+
+    <div class="game-board">
+      <div class="canvas-wrap" id="canvas-wrap">
+        <canvas id="canvas" width="800" height="600"></canvas>
+        <div class="rate-box hidden" id="rate-box">
+          <button class="rate-btn like" data-like="1" aria-label="Таалагдлаа" title="Таалагдлаа"></button>
+          <button class="rate-btn dislike" data-like="0" aria-label="Таалагдсангүй" title="Таалагдсангүй"></button>
+        </div>
+        <div class="overlay" id="overlay"><div class="overlay-content" id="overlay-content"></div></div>
+        <div class="lobby hidden" id="lobby"></div>
+      </div>
+      <div class="board-bottom">
+        <div class="toolbar hidden" id="toolbar"></div>
+      </div>
+    </div>
+
+    <aside class="game-chat">
+      <div class="fill chat">
+        <div class="chat-log" id="chat-log" aria-live="polite"></div>
+        <form class="chat-form" id="chat-form" autocomplete="off">
+          <input class="chat-input" id="chat-input" type="text" maxlength="100" placeholder="Таамаглалаа энд бичнэ үү..." spellcheck="false" enterkeyhint="send">
+          <span class="chat-count" id="chat-count"></span>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <div id="modal-root"></div>
+  <div id="toast-root"></div>
+
+  <!-- Лого (хоёр газар ашиглана) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <g id="logo">
+        <text x="8" y="112" textLength="486" lengthAdjust="spacing" rotate="-6 5 -4 6 -5 4 -6 0 5 -3"
+              font-family="Nunito, sans-serif" font-weight="900" font-size="124"
+              stroke="#161634" stroke-width="15" stroke-linejoin="round" paint-order="stroke">
+          <tspan fill="#ef3b2d">s</tspan><tspan fill="#ff9a1f">k</tspan><tspan fill="#ffe02e">r</tspan><tspan fill="#4fde3a">i</tspan><tspan fill="#36d3f5">b</tspan><tspan fill="#3c6df0">b</tspan><tspan fill="#b04df0">l</tspan><tspan fill="#ff5ba0">.</tspan><tspan fill="#ffffff">i</tspan><tspan fill="#ffffff">o</tspan>
+        </text>
+        <g transform="translate(548 14) rotate(32)" stroke="#161634" stroke-width="7" stroke-linejoin="round">
+          <rect x="-15" y="-4" width="30" height="22" rx="6" fill="#ff6f9c"/>
+          <rect x="-15" y="16" width="30" height="12" fill="#d4dcef"/>
+          <rect x="-15" y="27" width="30" height="66" fill="#ff4d6d"/>
+          <path d="M-5 30V90" stroke="#ff8ba3" stroke-width="5" fill="none"/>
+          <path d="M-15 92H15L0 126Z" fill="#f6d7a7"/>
+          <path d="M-5.5 114H5.5L0 126Z" fill="#161634" stroke-width="3"/>
+        </g>
+      </g>
+    </defs>
+  </svg>
+
+  <script src="/socket.io/socket.io.min.js"></script>
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

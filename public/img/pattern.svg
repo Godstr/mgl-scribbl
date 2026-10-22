@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="460" viewBox="0 0 460 460">
+  <g fill="none" stroke="#1b37a8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" opacity=".55">
+    <!-- байшин -->
+    <g transform="translate(22 24)"><path d="M4 58V28L32 6l28 22v30zM24 58V42h16v16M10 32h10v8H10z"/></g>
+    <!-- загас -->
+    <g transform="translate(120 40) rotate(-12)"><path d="M4 22C14 6 40 4 54 22 40 40 14 38 4 22zM54 22l14-12v24zM18 18v.5"/></g>
+    <!-- нар -->
+    <g transform="translate(240 20)"><circle cx="30" cy="30" r="13"/><path d="M30 4v8M30 48v8M4 30h8M48 30h8M12 12l6 6M42 42l6 6M48 12l-6 6M12 48l6-6"/></g>
+    <!-- од -->
+    <g transform="translate(355 30) rotate(10)"><path d="m28 4 7 15 16 2-12 11 3 16-14-8-14 8 3-16L5 21l16-2z"/></g>
+    <!-- инээмсэглэл -->
+    <g transform="translate(40 130)"><circle cx="28" cy="28" r="24"/><path d="M19 22v2M37 22v2M17 34q11 10 22 0"/></g>
+    <!-- мод -->
+    <g transform="translate(150 128)"><path d="M30 70V44M30 44c-20 2-26-20-12-28C20 2 42 2 44 16c14 6 8 30-14 28"/></g>
+    <!-- машин -->
+    <g transform="translate(250 140)"><path d="M6 40V28l10-14h30l12 14h12v12zM18 14l-2 14h40"/><circle cx="20" cy="42" r="7"/><circle cx="56" cy="42" r="7"/></g>
+    <!-- зүрх -->
+    <g transform="translate(370 130)"><path d="M28 50C8 36 2 24 10 14s20-4 18 6c-2-10 10-16 18-6s2 22-18 36z"/></g>
+    <!-- үүл -->
+    <g transform="translate(20 240)"><path d="M14 40C2 40 2 24 14 24 14 10 32 6 38 18c8-8 24-2 22 10 12 2 10 12 0 12z"/></g>
+    <!-- бөмбөлөг -->
+    <g transform="translate(130 235)"><ellipse cx="22" cy="22" rx="17" ry="20"/><path d="M22 42l-3 4h6zM22 46c-6 10 6 16 0 26"/></g>
+    <!-- аяга -->
+    <g transform="translate(210 255)"><path d="M6 10h40v22c0 10-8 18-18 18h-4C14 50 6 42 6 32zM46 16h6c8 0 8 16 0 16h-6M16 2c-3 3 3 5 0 8M26 2c-3 3 3 5 0 8"/></g>
+    <!-- цэцэг -->
+    <g transform="translate(300 240)"><circle cx="26" cy="24" r="6"/><path d="M26 18c-6-14 6-14 0 0M32 24c14-6 14 6 0 0M26 30c6 14-6 14 0 0M20 24c-14 6-14-6 0 0M26 30v34M26 50c8-8 14-4 14-4"/></g>
+    <!-- шүхэр -->
+    <g transform="translate(385 235)"><path d="M4 30C6 6 50 6 52 30c-6-6-12-6-16 0-4-6-12-6-16 0-4-6-10-6-16 0zM28 30v24c0 6-8 6-8 0"/></g>
+    <!-- сар -->
+    <g transform="translate(40 345)"><path d="M36 6C18 8 10 34 28 46c10 6 24 2 28-6C38 44 24 24 36 6z"/></g>
+    <!-- нот -->
+    <g transform="translate(135 345)"><path d="M14 48V10l30-6v38"/><ellipse cx="9" cy="48" rx="7" ry="5"/><ellipse cx="39" cy="42" rx="7" ry="5"/></g>
+    <!-- алим -->
+    <g transform="translate(225 350)"><path d="M26 14c-10-6-24 0-22 16 2 20 14 26 22 20 8 6 20 0 22-20 2-16-12-22-22-16zM26 14c0-6 2-10 6-12M28 8c6-4 12-2 14 2-6 4-12 2-14-2z"/></g>
+    <!-- харандаа -->
+    <g transform="translate(320 340) rotate(40)"><path d="M10 0h14v50l-7 12-7-12zM10 10h14M10 50h14"/></g>
+    <!-- асуулт -->
+    <g transform="translate(400 350)"><path d="M10 16c0-14 26-14 26 0 0 10-12 10-12 22M24 50v1"/></g>
+  </g>
+</svg>

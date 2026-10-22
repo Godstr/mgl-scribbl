@@ -1,0 +1,24 @@
+{
+  "name": "mgl-skribbl",
+  "version": "1.0.0",
+  "description": "skribbl.io — монгол хэл дээрх хувилбар (олон тоглогчтой зурж таах тоглоом)",
+  "type": "module",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@fontsource/nunito": "^5.3.0",
+    "express": "^5.3.0",
+    "socket.io": "^4.8.4"
+  },
+  "devDependencies": {
+    "socket.io-client": "^4.8.1"
+  }
+}
