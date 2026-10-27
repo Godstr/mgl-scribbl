@@ -33,10 +33,10 @@ export const LIMITS = {
   customWordsMaxChars: 20000,
 };
 
-export const PUBLIC_MAX_PLAYERS = 8;
+export const PUBLIC_MAX_PLAYERS = 16;
 
 export const DEFAULT_SETTINGS = Object.freeze({
-  maxPlayers: 8,
+  maxPlayers: 16,
   drawTime: 80,
   rounds: 3,
   wordCount: 3,

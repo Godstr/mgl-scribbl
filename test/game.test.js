@@ -144,15 +144,15 @@ test('ойрхон таамаг, зураачийн нууц, тоглогч г�
   await sleep(50);
 });
 
-test('нийтийн өрөө: 2 хүн ороход автоматаар эхэлнэ, 8 хүнээр дүүрнэ', async () => {
-  const clients = Array.from({ length: 10 }, client);
+test('нийтийн өрөө: 2 хүн ороход автоматаар эхэлнэ, 16 хүнээр дүүрнэ', async () => {
+  const clients = Array.from({ length: 18 }, client);
   const joined = await Promise.all(clients.map((s, i) => {
     s.emit('play', { name: `Тоглогч ${i}`, clientId: `p${i}` });
     return once(s, 'joined');
   }));
   const rooms = new Map();
   for (const j of joined) rooms.set(j.code, (rooms.get(j.code) || 0) + 1);
-  assert.deepEqual([...rooms.values()].sort((x, y) => y - x), [8, 2]);
+  assert.deepEqual([...rooms.values()].sort((x, y) => y - x), [16, 2]);
   await sleep(300);
   const started = clients[0].events.some(([ev, d]) => ev === 'phase' && d.phase !== 'waiting')
     || joined[0].state.phase !== 'waiting';
