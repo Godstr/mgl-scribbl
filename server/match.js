@@ -132,7 +132,7 @@ export function levenshtein(a, b, max = Infinity) {
   return prev[b.length];
 }
 
-const closeLimit = (len) => (len >= 8 ? 2 : 1);
+const closeLimit = (len) => (len >= 16 ? 2 : 1);
 
 // Үр дүн: 'correct' | 'close' | 'wrong'
 export function checkGuess(guess, prep) {
