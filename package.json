@@ -1,7 +1,7 @@
 {
-  "name": "mgl-skribbl",
+  "name": "zur-taa",
   "version": "1.0.0",
-  "description": "skribbl.io — монгол хэл дээрх хувилбар (олон тоглогчтой зурж таах тоглоом)",
+  "description": "ЗУР ТАА — монгол хэл дээрх олон тоглогчтой зурж таах тоглоом",
   "type": "module",
   "main": "server/index.js",
   "scripts": {
